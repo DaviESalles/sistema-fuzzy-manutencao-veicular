@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sistema Fuzzy de Manutenção Veicular</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Sistema Inteligente para Priorização de Manutenções Veiculares</h1>
+      <p>
+        MVP acadêmico utilizando Lógica Fuzzy para apoiar a decisão sobre a prioridade
+        de manutenções preventivas.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Dados da Manutenção</h2>
+
+      <form id="maintenanceForm">
+        <div class="form-group">
+          <label for="tipo">Tipo de manutenção</label>
+          <select id="tipo" required>
+            <option value="">Selecione...</option>
+            <option value="Troca de óleo">Troca de óleo</option>
+            <option value="Pneus">Pneus</option>
+            <option value="Pastilhas de freio">Pastilhas de freio</option>
+            <option value="Bateria">Bateria</option>
+            <option value="Correia">Correia</option>
+            <option value="Filtros">Filtros</option>
+            <option value="Outro componente">Outro componente</option>
+          </select>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="km">Quilometragem desde a última manutenção</label>
+            <input type="number" id="km" min="0" placeholder="Ex: 12000" required />
+          </div>
+
+          <div class="form-group">
+            <label for="tempo">Tempo desde a última manutenção (meses)</label>
+            <input type="number" id="tempo" min="0" placeholder="Ex: 8" required />
+          </div>
+
+          <div class="form-group">
+            <label for="desgaste">Nível de desgaste percebido (0 a 10)</label>
+            <input type="number" id="desgaste" min="0" max="10" placeholder="Ex: 7" required />
+          </div>
+
+          <div class="form-group">
+            <label for="criticidade">Criticidade do componente</label>
+            <select id="criticidade" required>
+              <option value="">Selecione...</option>
+              <option value="2">Baixa</option>
+              <option value="5">Média</option>
+              <option value="8">Alta</option>
+              <option value="10">Vital</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sintomas">Sintomas percebidos</label>
+            <select id="sintomas" required>
+              <option value="">Selecione...</option>
+              <option value="0">Ausentes</option>
+              <option value="3">Leves</option>
+              <option value="6">Moderados</option>
+              <option value="10">Severos</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Avaliar prioridade</button>
+      </form>
+    </section>
+
+    <section id="resultado" class="card result hidden">
+      <h2>Resultado da Avaliação</h2>
+
+      <div class="priority-box">
+        <span class="label">Prioridade:</span>
+        <strong id="prioridadeTexto">-</strong>
+      </div>
+
+      <div class="score-area">
+        <span>Pontuação fuzzy aproximada:</span>
+        <strong id="pontuacao">0</strong>
+      </div>
+
+      <div class="bar">
+        <div id="barFill"></div>
+      </div>
+
+      <h3>Justificativa</h3>
+      <p id="justificativa"></p>
+
+      <h3>Graus de pertinência considerados</h3>
+      <ul id="pertinencias"></ul>
+    </section>
+
+    <section class="card explanation">
+      <h2>Como o MVP utiliza Lógica Fuzzy?</h2>
+      <p>
+        O sistema transforma entradas numéricas e subjetivas em graus de risco. Em vez de
+        classificar uma situação apenas como verdadeira ou falsa, ele considera níveis
+        intermediários, como baixa, média, alta ou crítica. A prioridade final é calculada
+        combinando quilometragem, tempo, desgaste, criticidade e sintomas percebidos.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
