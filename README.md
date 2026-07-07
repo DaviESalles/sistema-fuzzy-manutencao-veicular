@@ -65,13 +65,11 @@ Desenvolver um MVP de sistema inteligente capaz de auxiliar na priorização de 
 ├── script.js
 ├── README.md
 ├── docs/
-│   ├── relatorio-final.pdf
-│   └── apresentacao.pdf
+│   ├── relatorio-final
+│   └── apresentacao
 └── assets/
     └── imagens-ou-prints-do-projeto
 ```
-
-> Observação: a pasta `docs` pode ser utilizada para armazenar o relatório e os slides da apresentação, caso esses arquivos sejam adicionados ao repositório.
 
 ## Como executar o projeto
 
@@ -87,7 +85,7 @@ Como o MVP foi desenvolvido com HTML, CSS e JavaScript puros, não é necessári
 ### Opção 2: clonar com Git
 
 ```bash
-git clone https://github.com/SEU-USUARIO/sistema-fuzzy-manutencao-veicular.git
+git clone https://github.com/DaviESalles/sistema-fuzzy-manutencao-veicular
 cd sistema-fuzzy-manutencao-veicular
 ```
 
